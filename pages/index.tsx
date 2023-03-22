@@ -19,10 +19,20 @@ export default function Home() {
 
   // States
   const [value, setValue] = useState<string>("");
+  const [profileMe, setprofileMe] = useState<string>("");
+  const [profileYou, setprofileYou] = useState<string>("");
   const [conversation, setConversation] = useState<Conversation[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  },[]
+  );
+  const handleInputMe = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  },[]
+  );
+  const handleInputYou = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   },[]
   );
