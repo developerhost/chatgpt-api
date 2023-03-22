@@ -98,19 +98,23 @@ export default function Home() {
             <React.Fragment key={index}>
               <br />
               {item.role === "assistant" ? (
-                <div className="chat chat-end">
-                  <div className="chat-bubble chat-bubble-secondary">
-                    <strong className="badge badge-primary">AVA</strong>
-                    <br />
-                    {item.content}
+                <div className="chat chat-start">
+                  <div className="chat-header">
+                    <strong>
+                      AI
+                    </strong>
+                    <div className="chat-bubble chat-bubble-info">
+                      {item.content}
+                    </div>
                   </div>
                 </div>
               ) : (
-                <div className="chat chat-start">
-                  <div className="chat-bubble chat-bubble-primary">
-                    <strong className="badge badge-primary">User</strong>
-                    <br />
-                    {item.content}
+                <div className="chat chat-end">
+                  <div className="chat-header">
+                    <div className='text-right font-bold'>User</div>
+                    <div className="chat-bubble chat-bubble">
+                      {item.content}
+                    </div>
                   </div>
                 </div>
               )}
